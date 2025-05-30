@@ -15,14 +15,18 @@ import traceback
 def button_function_autosearch_file(dict_global):
     find_newest_file_with_restraints(dict_global)
     text_input_entry = dict_global["gui_elements"]["text_input_entry_dat_filepath"]
-    print(type(text_input_entry))
+    # print(type(text_input_entry))
     # print(ddddd)
     # Clear the existing content
     text_input_entry.delete(0, "end")
 
-    # Insert the new filename
-    # TODO: this needs some refinement: does not act well if the path is not valid or so, ??? if None???
-    text_input_entry.insert(0, dict_global.get("dat_file", "empty"))
+    try:
+        # Insert the new filename
+        # TODO: this needs some refinement: does not act well if the path is not valid or so, ??? if None???
+        text_input_entry.insert(0, dict_global.get("dat_file", "empty"))
+    except Exception as e:
+        print(e)
+        print("An error while autosearching files occurred. Potentially, no file according to the searching pattern was found.")
 
 
 def button_function_load_user_settings(dict_global):
@@ -30,7 +34,9 @@ def button_function_load_user_settings(dict_global):
         json_filepath = dict_global["json_filepath"]
         dict_user_settings = load_json(json_filepath)
         # dict_user_settings = {}
-        dict_global = {**dict_global, **dict_user_settings}
+        # dict_global_ = dict_global['dict_global']
+        # dict_global['dict_global'] = {**dict_global_, **dict_user_settings}
+        dict_global.update(dict_user_settings) #['root_dir_data_files'] = "C:\\Xcalibur\\log"
         print("\n\n")
         print(f"Loaded JSON user settings from disk: ")
         print(json.dumps(dict_user_settings, indent=4, separators=(",", ": ")))

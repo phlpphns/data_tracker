@@ -8,15 +8,20 @@ def set_axis_on_auto_zoom_respecting_user_limits(dict_global):
     ax = dict_global["ax"]
     keys_of_interest = dict_global["keys_of_interest"]
 
-    ax.set_xlim(
-        [
-            0,
-            max(
-                dict_global.get("user_defined_max_x_threshold", 0),
-                np.max(pandas_main_dataframe_read_data["time"]) * 1.1,
-            ),
-        ]
-    )
+    if False:
+        ax.set_xlim(
+            [
+                0,
+                max(
+                    dict_global.get("user_defined_max_x_threshold", 0),
+                    np.max(pandas_main_dataframe_read_data["time"]),# * 1.1,
+                ),
+            ]
+        )
+
+    start_limit = pandas_main_dataframe_read_data["time"].iloc[0]
+    end_limit = pandas_main_dataframe_read_data["time"].iloc[-1]
+    ax.set_xlim(start_limit, end_limit)
 
     if keys_of_interest:
         y_values = pandas_main_dataframe_read_data[keys_of_interest].values.flatten()
@@ -47,14 +52,14 @@ def update_plot(dict_global):
     ):  # check if the data frame and selected features are not empty.
         for key in selected_features:
             if key not in lines:
-                (line,) = ax.plot(df["time"], df[key], label=key)
+                (line,) = ax.plot(df["time"], df[key], label=key, lw=3)
                 lines[key] = line
             else:
                 line = lines[key]
                 line.set_xdata(df["time"])
                 line.set_ydata(df[key])
 
-        ax.legend()
+        ax.legend(loc=2)
     else:
         pass
         # ax.legend() #still call legend so the warning is not shown.

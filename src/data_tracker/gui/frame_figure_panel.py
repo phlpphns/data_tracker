@@ -38,7 +38,10 @@ def configure_figure_panel(frame_holding_figure, dict_global):
     # dict_global["tab_widget"].grid_columnconfigure(0, weight=1)
 
     # Create Matplotlib Figure
+    plt.style.use('ggplot')
+    # plt.tight_layout()
     fig, ax = plt.subplots(figsize=dict_global['figsize'])
+    ax.tick_params(axis='x', labelrotation=45)
     dict_global["fig"] = fig
     dict_global["ax"] = ax
     dict_global["ax"].set_xlabel("Time [h]")

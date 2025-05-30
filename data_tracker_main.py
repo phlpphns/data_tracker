@@ -1,7 +1,15 @@
 ### for issues with GIT: https://graphite.dev/guides/how-to-merge-branch-to-main-in-git
 ### WE HAVE A VARIABLES MESS.
+### WE SHOULD HAVE A FUNCTION "CLEAN UP" OR SO, THAT LET'S US REMOVE KEYS FROM THE GLOBAL DICT
+### IF THEY ARE NOT USED ???
+### ENCAPSULATE USER SETTINGS??!!!!
+
+### example settings::::: here a standard dict is defined. BUT: is it the same as loading the config json file???
+### WE NEED TO MAKE SURE THAT THE CONFIG DICT IS UPDATED.
 
 # TODOS:
+# ADD LOGGING?
+# CREATE A FACADE ALSO FOR THE GUI ELEMENTS
 # eliminate global variables; adapt file opening procedures?
 # reloading of files needs to be improved
 # automatical searching and loading of files
@@ -68,7 +76,7 @@ from data_tracker.in_and_output.upon_startup import (
     welcome_message_gui,
 )
 from data_tracker.presets import define_dict_user_settings_jeol
-from data_tracker.reader_facade import DataReaderFacade
+from data_tracker.facades import DataReaderFacade
 from data_tracker.testing import create_data_generator_for_testing
 import sys
 import tkinter as tk
@@ -117,7 +125,7 @@ if dict_global["test_mode"]:
 # dict_global['dict_global'] = dict_global
 # print(dict_global['dict_global'])
 dict_global["pipe_to_gui"] = True
-dict_global["pipe_to_gui"] = False
+# dict_global["pipe_to_gui"] = False
 dict_global = {**dict_global, **dict_user_settings}
 # dict_global['root'] = root
 # create_gui_scaffold(dict_global)
@@ -136,6 +144,9 @@ dict_global["data_reader"] = DataReaderFacade(
         r"C:\Users\pkv190\Dropbox\CODES\playground\arianna_monitoring_file\user_scripts"
     ],
 )
+
+# dict_global['dict_global'] = dict_global
+
 #    pd.read_csv
 # print(dddd)
 # def load_settings_file(dict_global):

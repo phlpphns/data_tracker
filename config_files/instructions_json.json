@@ -20,7 +20,7 @@
     "name_png": "screenshots/test.png",
     "pattern_auto_file_search": "EDAutoLog.dat",
     "refresh_rate_in_ms": 50,
-    "root_dir_data_files": ".",
+    "root_dir_data_files": "C:\\Xcalibur\\log",
     "streaming": false,
     "user_defined_max_x_threshold": 0.027777777777777776,
     "user_defined_max_y_threshold": 200
