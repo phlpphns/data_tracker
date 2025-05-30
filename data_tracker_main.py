@@ -1,3 +1,6 @@
+### for issues with GIT: https://graphite.dev/guides/how-to-merge-branch-to-main-in-git
+### WE HAVE A VARIABLES MESS.
+
 # TODOS:
 # eliminate global variables; adapt file opening procedures?
 # reloading of files needs to be improved

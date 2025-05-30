@@ -1,3 +1,5 @@
+#### THIS COULD BE MOVED TO THE MAIN SCRIPT
+
 # blitting - https://stackoverflow.com/questions/57891219/how-to-make-a-fast-matplotlib-live-plot-in-a-pyqt5-gui
 # https://www.pythonguis.com/tutorials/plotting-pyqtgraph/
 #
