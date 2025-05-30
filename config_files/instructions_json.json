@@ -1,0 +1,27 @@
+{
+    "auto_file_search_on_startup": true,
+    "auto_run_on_startup": true,
+    "auto_zoom": true,
+    "dat_file": ".\\Fri-Mar-07-21-31-13-2025_EDAutoLog\\EDAutoLog.dat",
+    "file_type": "csv",
+    "json_filepath": "./config_files/instructions_json.json",
+    "keys_of_interest": [
+        "HT [kV]",
+        "Beam Current [uA]",
+        "Filament Current [A]",
+        "Penning PeG1",
+        "Column PiG1",
+        "Gun PiG2",
+        "Detector PiG3",
+        "Specimen PiG4",
+        "RT1 PiG5"
+    ],
+    "leading_delimiter": true,
+    "name_png": "screenshots/test.png",
+    "pattern_auto_file_search": "EDAutoLog.dat",
+    "refresh_rate_in_ms": 50,
+    "root_dir_data_files": ".",
+    "streaming": false,
+    "user_defined_max_x_threshold": 0.027777777777777776,
+    "user_defined_max_y_threshold": 200
+}

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+#requires = ["setuptools>=61.0", "wheel"]
+
+[project]
+name = "data_tracker"
+version = "0.1.0"
+dependencies = ["numpy", "matplotlib", "pandas",]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["data_tracker"]
