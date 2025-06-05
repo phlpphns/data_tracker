@@ -5,6 +5,7 @@ __pycache__/
 
 # other stuff
 __ignore__/
+data_tracker_app_portable/
 
 # C extensions
 *.so
