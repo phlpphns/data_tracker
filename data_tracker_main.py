@@ -116,7 +116,7 @@ def _create_data_generator():
     return create_data_generator_real(dict_global)
 
 dict_global["test_mode"] = True
-# dict_global['test_mode'] = False
+dict_global['test_mode'] = False
 
 dict_global["function_get_new_data"] = _create_data_generator
 if dict_global["test_mode"]:
