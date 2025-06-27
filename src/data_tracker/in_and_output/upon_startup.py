@@ -166,7 +166,7 @@ def remove_tab_for_plot(feature, dict_global):
 
 def welcome_message_gui():
     print(
-        "Hallo and Welcome to the editor.\
+        "Hallo and Welcome to the data tracker.\
         \nWe have a set of standard parameters that can be saved and changed by reading the respective json file.\
         \nMay the electrons be with you - have fun!!! \n\n\n"
     )

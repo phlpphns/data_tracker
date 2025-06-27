@@ -1,6 +1,7 @@
 import json
 import os
 
+
 def load_json(json_filepath):
     try:
         dict_settings = {}
@@ -56,4 +57,3 @@ def get_newest_file_from_list(file_list):
         return None  # Return None if the list is empty
 
     return max(file_list, key=os.path.getmtime)
-

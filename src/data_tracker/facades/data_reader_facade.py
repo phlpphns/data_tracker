@@ -1,17 +1,14 @@
 # https://stackoverflow.com/questions/67631/how-can-i-import-a-module-dynamically-given-the-full-path
 
-from data_tracker.data_readers import DataReaderStrategy
-
-
 import importlib.util
 import inspect
 import os
 import pkgutil
+import sys
 from pathlib import Path
-import sys
 
-import inspect
-import sys
+from data_tracker.data_readers import DataReaderStrategy
+
 if not hasattr(sys.modules[__name__], '__file__'):
     __file__ = inspect.getfile(inspect.currentframe())
 
@@ -22,8 +19,8 @@ import importlib
 import inspect
 import pkgutil
 
-from data_tracker.data_readers import DataReaderStrategy
 import data_tracker.data_readers as readers_pkg
+from data_tracker.data_readers import DataReaderStrategy
 
 #'''
 
